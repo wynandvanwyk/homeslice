@@ -1,7 +1,2 @@
-if [ -d "${HOME}/bin" ] ; then
-  export PATH="${HOME}/bin:${PATH}"
-fi
-
-if [ -d "${HOME}/.local/bin" ] ; then
-  export PATH="${HOME}/.local/bin:${PATH}"
-fi
+[ -d "${HOME}/bin" ] && export PATH="${HOME}/bin:${PATH}"
+[ -d "${HOME}/.local/bin" ] && export PATH="${HOME}/.local/bin:${PATH}"

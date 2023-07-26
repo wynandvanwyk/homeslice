@@ -1,7 +1,2 @@
-if [ -d "/usr/local/go/bin" ] ; then
-  export PATH="${PATH}:/usr/local/go/bin"
-fi
-
-if [ -d "${HOME}/go/bin" ] ; then
-  export PATH="${PATH}:${HOME}/go/bin"
-fi
+[ -d "/usr/local/go/bin" ] && export PATH="${PATH}:/usr/local/go/bin"
+[ -d "${HOME}/go/bin" ] && export PATH="${PATH}:${HOME}/go/bin"

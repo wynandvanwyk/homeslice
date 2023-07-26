@@ -1,3 +1,1 @@
-if [ -d "${HOME}/.krew/bin" ] ; then
-  export PATH="${PATH}:${HOME}/.krew/bin"
-fi
+[ -d "${HOME}/.krew/bin" ] && export PATH="${PATH}:${HOME}/.krew/bin"
