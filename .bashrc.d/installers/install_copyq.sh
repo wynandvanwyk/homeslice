@@ -1,4 +1,4 @@
-install_copyq() {
+function install_copyq() {
   if ! exists copyq; then
     sudo add-apt-repository ppa:hluk/copyq
     sudo apt update

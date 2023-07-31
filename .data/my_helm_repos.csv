@@ -1,0 +1,17 @@
+https://argoproj.github.io/argo-helm,argo-cd
+https://charts.external-secrets.io,external-secrets
+https://grafana.github.io/helm-charts,grafana
+https://charts.bitnami.com/bitnami,kafka
+https://kedacore.github.io/charts,keda
+https://kubecost.github.io/cost-analyzer/,cost-analyzer
+https://kyverno.github.io/kyverno/,kyverno
+https://grafana.github.io/helm-charts,loki-stack
+https://charts.bitnami.com/bitnami,nginx
+https://charts.bitnami.com/bitnami,postgresql
+https://prometheus-community.github.io/helm-charts,prometheus
+https://releases.rancher.com/server-charts/stable,rancher
+https://bitnami-labs.github.io/sealed-secrets,sealed-secrets
+https://traefik.github.io/charts,traefik
+https://helm.releases.hashicorp.com,vault
+https://charts.loft.sh,vcluster
+https://vmware-tanzu.github.io/helm-charts,velero

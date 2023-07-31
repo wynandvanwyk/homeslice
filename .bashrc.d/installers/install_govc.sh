@@ -1,5 +1,4 @@
-install_govc() {
-  current_dir=$PWD
+function install_govc() {
   if exists govc; then
     echo "Govc already installed..."
     return
@@ -13,5 +12,5 @@ install_govc() {
   rm -f govc_Linux_x86_64.tar.gz
   chmod a+x govc
   sudo mv --force govc /usr/local/bin/
-  cd $current_dir
+  cd -
 }

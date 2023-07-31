@@ -1,5 +1,4 @@
-install_bitwarden_cli() {
-  current_dir=$PWD
+function install_bitwarden_cli() {
   if exists bw; then
     echo "Bitwarden CLI already installed..."
     return
@@ -11,5 +10,5 @@ install_bitwarden_cli() {
   chmod +x ./bw
   sudo mv --force bw /usr/local/bin/bw
   rm -f ./bw.zip
-  cd $current_dir
+  cd -
 }

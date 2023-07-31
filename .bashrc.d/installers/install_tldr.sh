@@ -1,10 +1,10 @@
-install_tldr() {
+function install_tldr() {
   if exists tldr; then
-      echo "TLDR already installed..."
-      return
+    echo "TLDR already installed..."
+    return
   fi
 
   echo "Installing TLDR..."
-  apt-get install -y npm
+  sudo apt-get -y install npm
   sudo npm install -g tldr
 }

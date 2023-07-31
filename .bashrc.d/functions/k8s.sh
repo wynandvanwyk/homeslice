@@ -42,8 +42,13 @@ function osim_k8s_cluster_yaml_dump() {
   done
 }
 
+function osim_k8s_get_used_images() {
+  # uses images krew plugin
+  kubectl images -A -o json | jq -r '.[].image' | sort | uniq
+}
+
 # Download and save a list of official helm repos from artifacthub to ~/.data/helm_repos.list
-function osim_data_download_helm_repo_list() {
+function osim_helm_download_repo_list() {
   start_index=0
   cd $(mktemp -d)
   echo -n "" >helm_repos
@@ -51,25 +56,25 @@ function osim_data_download_helm_repo_list() {
   while [ $fetched_items -gt 0 ]; do
     curl --silent -X "GET" "https://artifacthub.io/api/v1/repositories/search?offset=${start_index}&limit=20&kind=0" -H "accept: application/json" >tmp.json
     echo "filtering out unverified publishers..."
-    cat tmp.json | jq '.[] | select(.verified_publisher==true) | .url' | sed 's/"//g' | sed 's/"//g' >>helm_repos
+    cat tmp.json | jq '.[] | select(.verified_publisher==true) | "\(.url),\(.name)"' | sed 's/"//g' | sed 's/"//g' >>helm_repos.csv
     fetched_items=$(cat tmp.json | jq '. | length')
     echo "Fetched ${fetched_items} items..."
     start_index=$((start_index + 20))
     sleep 1s
   done
   echo "filtering out all oci repos..."
-  grep -v '^oci' helm_repos >helm_repos_cleaned
+  grep -v '^oci' helm_repos.csv >helm_repos_cleaned.csv
   if gum confirm "Add helm repos to ~/.data/helm_repos.csv?"; then
     mkdir -p ~/.data
-    mv -f helm_repos_cleaned ~/.data/helm_repos.list
+    mv -f helm_repos_cleaned.csv ~/.data/helm_repos.csv
   fi
+  cd -
 }
 
 function osim_helm_add_all_official_repos() {
-  while read -r line; do
-    repo_name=$(echo $RANDOM | md5sum | head -c 20)
-    helm repo add "$repo_name" "$line" || true
-  done <~/.data/helm_repos.list
+  while IFS="," read -r url name; do
+    helm repo add "$name" "$url" || true
+  done <~/.data/helm_repos.csv
 }
 
 function osim_helm_clean_all_repos() {
