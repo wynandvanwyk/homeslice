@@ -9,11 +9,12 @@ function install_python_dev_environment() {
 
   # Install Pyenv
   curl https://pyenv.run | bash
-  RC_FILE=~/.bashrc.d/pyenv.sh
-  echo 'export PYENV_ROOT="${HOME}/.pyenv"' >"~/${RC_FILE}"
-  echo 'export PATH="$HOME/.pyenv/bin:$PATH"' >>"~/${RC_FILE}"
-  echo 'eval "$(pyenv init -)"' >>"~/${RC_FILE}"
-  echo 'eval "$(pyenv virtualenv-init -)"' >>"~/${RC_FILE}"
+  RC_FILE="${HOME}/.bashrc.d/pyenv.sh"
+  touch "${RC_FILE}"
+  echo 'export PYENV_ROOT="${HOME}/.pyenv"' >"${RC_FILE}"
+  echo 'export PATH="$HOME/.pyenv/bin:$PATH"' >>"${RC_FILE}"
+  echo 'eval "$(pyenv init -)"' >>"${RC_FILE}"
+  echo 'eval "$(pyenv virtualenv-init -)"' >>"${RC_FILE}"
   # command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
   # eval "$(pyenv init -)"
 }

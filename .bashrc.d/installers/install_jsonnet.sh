@@ -10,7 +10,7 @@ function install_jsonnet() {
   curl -Lo jsonnet_latest.tar.gz "https://github.com/google/go-jsonnet/releases/latest/download/go-jsonnet_${LATEST_VERSION:1}_Linux_x86_64.tar.gz"
 
   tar -xf jsonnet_latest.tar.gz
-  rm jsonnet_latest.tar.gz
+  rm -f jsonnet_latest.tar.gz
   chmod a+x jsonnet*
   sudo mv jsonnet* /usr/local/bin/
 

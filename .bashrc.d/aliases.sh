@@ -6,7 +6,7 @@ alias vi="vim"
 alias diff="colordiff"
 alias man="tldr"
 alias du="ncdu --color dark -rr -x --exclude .git --exclude node_modules"
-alias osim_update="homeslice; ./install.sh; cd -; exec bash"
+alias osim_update="cd ~/checkouts/wynandvw/homeslice; ./install.sh; cd -; exec bash"
 
 # often used one-liners
 
@@ -15,7 +15,7 @@ alias osim_ports_listening='netstat -tulanp | grep LISTEN'
 alias osim_public_ip='curl -s ifconfig.me'
 alias osim_flushdns='resolvectl flush-caches'
 alias osim_aws_vault='AWS_PROFILES=$(aws-vault list --profiles); AWS_SELECTED_PROFILE=$(gum choose ${AWS_PROFILES}); aws-vault exec "${AWS_SELECTED_PROFILE}" --duration 1h'
-alias pwn='if $(gum confirm "Are you sure you want to take ownership of this directory and all sub directories?"); then sudo chown -R $USER . ; fi'
+alias pwn='if $(gum confirm "Are you sure you want to take ownership of this directory and all sub directories?"); then sudo chown -R $USER: . ; fi'
 
 # improve command defaults
 
