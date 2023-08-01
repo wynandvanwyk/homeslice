@@ -23,8 +23,7 @@ function install_krew() {
 
   krew completion bash | sudo tee /etc/bash_completion.d/krew.sh
 
-  RC_FILE="~/.bashrc.d/krew.sh"
-  echo 'export PATH="${PATH}:${HOME}/.krew/bin"' >"${RC_FILE}"
-  echo 'export KREW_ROOT="${HOME}/krew"' >>"${RC_FILE}"
+  echo 'export PATH="${PATH}:${HOME}/.krew/bin"' >~/.bashrc.d/krew.sh
+  echo 'export KREW_ROOT="${HOME}/krew"' >>~/.bashrc.d/krew.sh
   cd -
 }
