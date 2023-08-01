@@ -1,5 +1,5 @@
 for file in ~/.bashrc.d/*.sh; do
-  if [ $file == "/home/${USER}/.bashrc.d/init.sh" ]; then
+  if [ $file == "${HOME}/.bashrc.d/init.sh" ]; then
     continue
   fi
   source $file

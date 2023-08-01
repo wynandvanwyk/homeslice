@@ -89,3 +89,11 @@ function configure_timezone() {
   SELECTED_TIMEZONE=$(timedatectl list-timezones | gum choose)
   timedatectl set-timezone "$SELECTED_TIMEZONE"
 }
+
+# function fs() {
+#   BUFFER+="$(gum filter)"
+#   zle -w end-of-line
+# }
+
+# zle -N fs
+# bindkey "^t" fs

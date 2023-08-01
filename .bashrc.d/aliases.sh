@@ -1,9 +1,12 @@
 # command replacements
 
 alias top="htop"
-alias df="pydf"
+alias df="duf"
 alias vi="vim"
 alias diff="colordiff"
+alias man="tldr"
+alias du="ncdu --color dark -rr -x --exclude .git --exclude node_modules"
+alias osim_update="homeslice; ./install.sh; cd -; exec bash"
 
 # often used one-liners
 
@@ -20,7 +23,7 @@ alias less="less -F"
 alias ping='ping -c 5'
 alias mkdir="mkdir -pv"
 alias wget="wget --continue"
-alias du="du -ch"
+#alias du="du -ch"
 alias ls='ls -CHG --color'
 alias grep='grep --color=auto'
 alias egrep='egrep --color=auto'

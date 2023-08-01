@@ -6,6 +6,7 @@ curl
 diff
 direnv
 dnsutils
+duf
 fzf
 git
 gnupg
@@ -19,9 +20,9 @@ lm-sensors
 lsb-release
 mlocate
 ncdu
+neofetch
 nmap
 ntp
-pydf
 software-properties-common
 tree
 wget

@@ -11,4 +11,5 @@ function install_azure_cli() {
   echo "deb [arch=amd64] https://packages.microsoft.com/repos/azure-cli/ $AZ_REPO main" | sudo tee /etc/apt/sources.list.d/azure-cli.list
   sudo apt-get -y update
   sudo apt-get -y install azure-cli
+  sudo wget https://raw.githubusercontent.com/Azure/azure-cli/dev/az.completion -O /etc/bash_completion.d/azure_cli.sh
 }

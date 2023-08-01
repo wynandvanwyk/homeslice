@@ -1,5 +1,6 @@
 function install_gum() {
   if exists gum; then
+    echo "Gum already installed..."
     return
   fi
 
