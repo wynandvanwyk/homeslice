@@ -1,3 +1,3 @@
 # homeslice
 
-A slice of home
+A slice of home and nothing but bash.
